@@ -63,7 +63,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'DELETE') {
             }
             echo json_encode($rows);
         } else {
-            echo "Nessun risultato trovato nella tabella.";
+            http_response_code(404); 
         }
     }
 }
@@ -78,7 +78,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
             $row = $result->fetch_assoc();
             echo json_encode($row);
         } else {
-            echo "Nessun risultato trovato con ID $nome";
+            http_response_code(404); 
         }
     }
     else if(count($array) == 3 && $array[2] == '')
@@ -93,7 +93,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
             }
             echo json_encode($rows);
         } else {
-            echo "Nessun risultato trovato nella tabella.";
+            http_response_code(404); 
         }
     }
 }
